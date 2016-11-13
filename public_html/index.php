@@ -4,13 +4,7 @@ use Symfony\Component\HttpFoundation\Request; // Per le richieste HTTP
 
 $app = require __DIR__.'/bootstrap.php';
 
-/**
- * CARTELLA CLINICA
- * servizio per estrarre le cartelle cliniche di un paziente
- * @version 1.0
- * @param string idpaziente
- * @return json
- */
+
 $app->get('/exchange/{valuta}', function (Request $request,$valuta) use ($app) {
   $XML=simplexml_load_file("http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml");
   //the file is updated daily between 2.15 p.m. and 3.00 p.m. CET
